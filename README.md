@@ -32,19 +32,18 @@ import (
 
 func main() {
 	sample := []string{
-		"From [f:A:PointА] To [t:B:PointB]",
 		"From [f:C:PointC] To [t:D:PointD]",
-		"From [f:B:PointB] To [t:C:PointC]",
-		"From [f:F:PointF] To [t:E:PointE]",
 		"From [f:D:PointD] To [t:F:PointF]",
+		"From [f:A:PointА] To [t:B:PointB]",
+		"From [f:F:PointF] To [t:E:PointE]",
+		"From [f:B:PointB] To [t:C:PointC]",
 	}
 
 	ts := ticketSorter.NewTicketSorter(parser.NewCardParser())
 
 	cards, err := ts.Sort(sample)
 	if err != nil {
-		fmt.Println(err.Error())
-		panic("")
+		panic(err)
 	}
 
 	for _, card := range cards {
