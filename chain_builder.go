@@ -1,13 +1,15 @@
 package ticket_sorter
 
-func (a *TicketSort) buildChain(cards []string) (card *Card, err error) {
-	card = &Card{}
+import "github.com/g3co/ticket_sorter/structs"
 
-	fromRegistry := make(map[string]*Card)
-	toRegistry := make(map[string]*Card)
+func (a *TicketSort) buildChain(cards []string) (card *structs.Card, err error) {
+	card = &structs.Card{}
+
+	fromRegistry := make(map[string]*structs.Card)
+	toRegistry := make(map[string]*structs.Card)
 
 	for _, item := range cards {
-		card, err = a.parseCard(item)
+		card, err = a.parser.Parse(item)
 		if err != nil {
 			return nil, err
 		}

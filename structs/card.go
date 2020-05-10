@@ -1,4 +1,4 @@
-package ticket_sorter
+package structs
 
 type Card struct {
 	Body     string

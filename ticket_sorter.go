@@ -1,20 +1,17 @@
 package ticket_sorter
 
 import (
-	"regexp"
+	"github.com/g3co/ticket_sorter/parser"
 )
 
-const placePattern = `\[([f|t]):([^:]+):([^\]]+)\]`
-
 type TicketSort struct {
-	matcher *regexp.Regexp
+	parser parser.Parser
 }
 
 type ITicketSort interface {
 	Process(cards []string) ([]string, error)
 }
 
-func NewTicketSorter() TicketSort {
-	matcher := regexp.MustCompile(placePattern)
-	return TicketSort{matcher: matcher}
+func NewTicketSorter(parser parser.Parser) TicketSort {
+	return TicketSort{parser: parser}
 }
