@@ -63,7 +63,7 @@ For example:
 []string{
     "From [f:LA:Los Angeles airport] To [t:MIA:Miami]",
     "From [f:NY:New-York] To [t:LA:Los Angeles]",
-    "From [f:MIA:Miami Beach] To [t:KW:Key West]",
+    "From [f:MIA:Miami Beach bus terminal] To [t:KW:Key West]",
 }
 ```
 
@@ -72,6 +72,6 @@ For example:
 []string{
     "From New-York To Los Angeles",
     "From Los Angeles airport To Miami",
-    "From Miami Beach To Key West",
+    "From Miami Beach bus terminal To Key West",
 }
 ```
