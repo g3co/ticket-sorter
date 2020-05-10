@@ -8,7 +8,7 @@ type Card struct {
 	PrevCard *Card
 }
 
-func (c *Card) FindFirst() (f *Card) {
+func (c *Card) First() (f *Card) {
 	f = c
 
 	if f.PrevCard == nil {
@@ -23,6 +23,10 @@ func (c *Card) FindFirst() (f *Card) {
 	}
 
 	return
+}
+
+func (c *Card) Next() *Card {
+	return c.NextCard
 }
 
 type Location struct {

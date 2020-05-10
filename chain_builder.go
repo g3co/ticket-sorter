@@ -25,7 +25,5 @@ func (a *TicketSort) buildChain(cards []string) (card *Card, err error) {
 		}
 	}
 
-	card = card.FindFirst()
-
 	return
 }

@@ -1,7 +1,6 @@
 package ticket_sorter
 
 import (
-	"errors"
 	"strings"
 )
 
@@ -14,13 +13,9 @@ const (
 	LocationIndexTitle     = 3
 )
 
-var (
-	ErrWrongCardFormat = errors.New("wrong card format")
-)
-
 func (a *TicketSort) parseCard(card string) (c *Card, err error) {
 
-	result := a.Matcher.FindAllStringSubmatch(card, 2)
+	result := a.matcher.FindAllStringSubmatch(card, 2)
 	if len(result) != 2 {
 		err = ErrWrongCardFormat
 		return

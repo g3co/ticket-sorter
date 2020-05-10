@@ -4,33 +4,17 @@ import (
 	"regexp"
 )
 
+const placePattern = `\[([f|t]):([^:]+):([^\]]+)\]`
+
 type TicketSort struct {
-	Matcher *regexp.Regexp
+	matcher *regexp.Regexp
 }
 
-func TicketSorter(cards []string) ([]string, error) {
-	matcher := regexp.MustCompile(`\[([f|t]):([^:]+):([^\]]+)\]`)
-	app := TicketSort{Matcher: matcher}
-	return app.process(cards)
+type ITicketSort interface {
+	Process(cards []string) ([]string, error)
 }
 
-func (a *TicketSort) process(cards []string) (res []string, err error) {
-	c, err := a.buildChain(cards)
-	if err != nil {
-		return
-	}
-
-	res = make([]string, len(cards))
-	counter := 0
-	for {
-		res[counter] = c.Body
-		if c.NextCard == nil {
-			break
-		}
-
-		c = c.NextCard
-		counter++
-	}
-
-	return res, nil
+func NewTicketSorter() TicketSort {
+	matcher := regexp.MustCompile(placePattern)
+	return TicketSort{matcher: matcher}
 }
