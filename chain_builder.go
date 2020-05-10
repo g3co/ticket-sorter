@@ -1,6 +1,6 @@
 package ticket_sorter
 
-import "github.com/g3co/ticket_sorter/structs"
+import "github.com/g3co/ticket-sorter/structs"
 
 func (a *TicketSort) buildChain(cards []string) (card *structs.Card, err error) {
 	card = &structs.Card{}

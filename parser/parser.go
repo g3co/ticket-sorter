@@ -1,7 +1,7 @@
 package parser
 
 import (
-	"github.com/g3co/ticket_sorter/structs"
+	"github.com/g3co/ticket-sorter/structs"
 )
 
 type Parser interface {

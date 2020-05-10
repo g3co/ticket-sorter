@@ -1,7 +1,7 @@
 package ticket_sorter
 
 import (
-	"github.com/g3co/ticket_sorter/parser"
+	"github.com/g3co/ticket-sorter/parser"
 )
 
 type TicketSort struct {

@@ -2,7 +2,7 @@ package parser
 
 import (
 	"errors"
-	"github.com/g3co/ticket_sorter/structs"
+	"github.com/g3co/ticket-sorter/structs"
 	"regexp"
 	"strings"
 )
