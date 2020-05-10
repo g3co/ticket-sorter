@@ -32,12 +32,12 @@ import (
 
 func main() {
 	sample := []string{
-		"From [f:C:PointC] To [t:D:PointD]",
-		"From [f:D:PointD] To [t:F:PointF]",
-		"From [f:A:PointА] To [t:B:PointB]",
-		"From [f:F:PointF] To [t:E:PointE]",
-		"From [f:B:PointB] To [t:C:PointC]",
-	}
+        "From [f:C:PointC] To [t:D:PointD] by bus, place 12",
+        "Airport [f:D:PointD] bus stop [t:F:PointF] Gate 45B. Seat 3A.\nBaggage drop at ticket counter 344",
+        "From [f:A:PointА] To [t:B:PointB] No seat assignment.",
+        "From [f:F:PointF] To [t:E:PointE] Seat 13A.",
+        "Downtown [f:B:PointB] by car [t:C:PointC] Terminal 22, Seat 3A.",
+    }
 
 	ts := ticketSorter.NewTicketSorter(parser.NewCardParser())
 
