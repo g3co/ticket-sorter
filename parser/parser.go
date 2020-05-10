@@ -1,4 +1,5 @@
-//go:generate mockgen -source=./parser.go -destination=./parser_mock.go -package=parser
+//go:generate mockgen -source=./parser.go -destination=./mock/parser_mock.go
+// Package parser provides parser for tickets for extract travel points information
 package parser
 
 import (

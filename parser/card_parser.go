@@ -26,11 +26,18 @@ var (
 	ErrWrongCardFormat = errors.New("wrong card format")
 )
 
+// NewCardParser factory method for CardParser type
 func NewCardParser() *CardParser {
 	matcher := regexp.MustCompile(pointPattern)
 	return &CardParser{matcher: matcher}
 }
 
+// Parse method implements functionality for parse card information from string
+//
+// Input string must contain two anchors for the start and end points.
+// [f:A:PointА] [t:B:PointB]
+// Each anchor contains 3 entities. Destination f(from) or t(to), unique place name A and B, and
+// name for replacement PointА and PointB, separated by ":" key.
 func (cp *CardParser) Parse(card string) (c *structs.Card, err error) {
 
 	result := cp.matcher.FindAllStringSubmatch(card, 2)

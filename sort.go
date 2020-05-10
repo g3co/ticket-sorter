@@ -2,6 +2,10 @@ package ticket_sorter
 
 import "github.com/g3co/ticket-sorter/structs"
 
+// Sort sorting cards by travel points
+//
+// input string arrays with anchors for parser, for example: []string{"From [f:A:A] To [t:B:B]"}
+// output string arrays with replaced anchors []string{"From A To B"}
 func (a *TicketSorter) Sort(cards []string) (res []string, err error) {
 	if len(cards) == 0 {
 		return

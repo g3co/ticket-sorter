@@ -2,7 +2,7 @@ package ticket_sorter
 
 import (
 	"errors"
-	"github.com/g3co/ticket-sorter/parser"
+	"github.com/g3co/ticket-sorter/parser/mock"
 	"github.com/g3co/ticket-sorter/structs"
 	"github.com/golang/mock/gomock"
 	"testing"
@@ -10,7 +10,7 @@ import (
 
 func TestTicketSort_Sort(t *testing.T) {
 	ctrl := gomock.NewController(t)
-	ps := parser.NewMockParser(ctrl)
+	ps := mock_parser.NewMockIParser(ctrl)
 
 	ts := NewTicketSorter(ps)
 

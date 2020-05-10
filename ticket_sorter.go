@@ -1,4 +1,4 @@
-//go:generate mockgen -source=./ticket_sorter.go -destination=./ticket_sorter_mock.go -package=ticket_sorter
+// Package ticket_sorter provides sort operation for travel tickets
 package ticket_sorter
 
 import (
@@ -13,6 +13,7 @@ type ITicketSorter interface {
 	Sort(cards []string) ([]string, error)
 }
 
+// NewTicketSorter factory method for TicketSorter type
 func NewTicketSorter(parser parser.IParser) TicketSorter {
 	return TicketSorter{parser: parser}
 }
