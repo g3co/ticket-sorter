@@ -1,6 +1,6 @@
 package ticket_sorter
 
-func (a *TicketSort) Process(cards []string) (res []string, err error) {
+func (a *TicketSort) Sort(cards []string) (res []string, err error) {
 	if len(cards) == 0 {
 		return
 	}

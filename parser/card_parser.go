@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	placePattern = `\[([f|t]):([^:]+):([^\]]+)\]`
+	pointPattern = `\[([f|t]):([^:]+):([^\]]+)\]`
 
 	LocationKeyFrom        = "f"
 	LocationKeyTo          = "t"
@@ -27,7 +27,7 @@ var (
 )
 
 func NewCardParser() *CardParser {
-	matcher := regexp.MustCompile(placePattern)
+	matcher := regexp.MustCompile(pointPattern)
 	return &CardParser{matcher: matcher}
 }
 

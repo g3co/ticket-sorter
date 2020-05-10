@@ -36,7 +36,7 @@ func main() {
 
 	ts := ticketSorter.NewTicketSorter(parser.NewCardParser())
 
-	cards, err := ts.Process(sample)
+	cards, err := ts.Sort(sample)
 	if err != nil {
 		fmt.Println(err.Error())
 		panic("")
@@ -55,8 +55,8 @@ Each card must contain two anchors for the start and end points.
 `[f:A:PointА] [t:B:PointB]`
 
 Each anchor contains 3 entities. 
-Destination f(from) or t(to), unique name A and B for destination, 
-and name for replacement, separated by ":" key. 
+Destination f(from) or t(to), unique place name A and B, 
+and name for replacement PointА and PointB, separated by ":" key. 
 
 For example:
 ```

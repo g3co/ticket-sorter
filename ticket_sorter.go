@@ -9,7 +9,7 @@ type TicketSort struct {
 }
 
 type ITicketSort interface {
-	Process(cards []string) ([]string, error)
+	Sort(cards []string) ([]string, error)
 }
 
 func NewTicketSorter(parser parser.Parser) TicketSort {
