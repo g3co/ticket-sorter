@@ -7,6 +7,11 @@ Library for sorting travel tickets by destination points
 Add to your go.mod file
 `require github.com/g3co/ticket_sorter latest`
 
+### Test
+
+
+`go test . ./parser`
+
 ### Usage
 
 Create a new instance of TicketSorter and inject a parser for the card.

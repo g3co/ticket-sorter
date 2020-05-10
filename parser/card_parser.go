@@ -51,9 +51,6 @@ func (cp *CardParser) Parse(card string) (c *structs.Card, err error) {
 			c.From = l
 		} else if item[LocationIndexDirection] == LocationKeyTo {
 			c.To = l
-		} else {
-			err = ErrWrongCardFormat
-			return
 		}
 
 		card = strings.Replace(card, item[LocationIndexPattern], l.Title, 1)
