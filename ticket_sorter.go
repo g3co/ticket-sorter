@@ -5,14 +5,14 @@ import (
 	"github.com/g3co/ticket-sorter/parser"
 )
 
-type TicketSort struct {
+type TicketSorter struct {
 	parser parser.IParser
 }
 
-type ITicketSort interface {
+type ITicketSorter interface {
 	Sort(cards []string) ([]string, error)
 }
 
-func NewTicketSorter(parser parser.IParser) TicketSort {
-	return TicketSort{parser: parser}
+func NewTicketSorter(parser parser.IParser) TicketSorter {
+	return TicketSorter{parser: parser}
 }

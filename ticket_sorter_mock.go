@@ -9,31 +9,31 @@ import (
 	reflect "reflect"
 )
 
-// MockITicketSort is a mock of ITicketSort interface
-type MockITicketSort struct {
+// MockITicketSorter is a mock of ITicketSorter interface
+type MockITicketSorter struct {
 	ctrl     *gomock.Controller
-	recorder *MockITicketSortMockRecorder
+	recorder *MockITicketSorterMockRecorder
 }
 
-// MockITicketSortMockRecorder is the mock recorder for MockITicketSort
-type MockITicketSortMockRecorder struct {
-	mock *MockITicketSort
+// MockITicketSorterMockRecorder is the mock recorder for MockITicketSorter
+type MockITicketSorterMockRecorder struct {
+	mock *MockITicketSorter
 }
 
-// NewMockITicketSort creates a new mock instance
-func NewMockITicketSort(ctrl *gomock.Controller) *MockITicketSort {
-	mock := &MockITicketSort{ctrl: ctrl}
-	mock.recorder = &MockITicketSortMockRecorder{mock}
+// NewMockITicketSorter creates a new mock instance
+func NewMockITicketSorter(ctrl *gomock.Controller) *MockITicketSorter {
+	mock := &MockITicketSorter{ctrl: ctrl}
+	mock.recorder = &MockITicketSorterMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *MockITicketSort) EXPECT() *MockITicketSortMockRecorder {
+func (m *MockITicketSorter) EXPECT() *MockITicketSorterMockRecorder {
 	return m.recorder
 }
 
 // Sort mocks base method
-func (m *MockITicketSort) Sort(cards []string) ([]string, error) {
+func (m *MockITicketSorter) Sort(cards []string) ([]string, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Sort", cards)
 	ret0, _ := ret[0].([]string)
@@ -42,7 +42,7 @@ func (m *MockITicketSort) Sort(cards []string) ([]string, error) {
 }
 
 // Sort indicates an expected call of Sort
-func (mr *MockITicketSortMockRecorder) Sort(cards interface{}) *gomock.Call {
+func (mr *MockITicketSorterMockRecorder) Sort(cards interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Sort", reflect.TypeOf((*MockITicketSort)(nil).Sort), cards)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Sort", reflect.TypeOf((*MockITicketSorter)(nil).Sort), cards)
 }

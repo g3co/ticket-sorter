@@ -2,7 +2,7 @@ package ticket_sorter
 
 import "github.com/g3co/ticket-sorter/structs"
 
-func (a *TicketSort) Sort(cards []string) (res []string, err error) {
+func (a *TicketSorter) Sort(cards []string) (res []string, err error) {
 	if len(cards) == 0 {
 		return
 	}
